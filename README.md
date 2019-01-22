@@ -1,2 +1,2 @@
-# samhenry.github.io
+# samhenryowen.github.io
 Computer Science Repo
