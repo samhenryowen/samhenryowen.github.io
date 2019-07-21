@@ -1,0 +1,21 @@
+h1 {
+    border-style: solid;
+    border-width: 2px;
+    color: rgb(20, 54, 150);
+}
+
+a {
+    color: blueviolet;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: royalblue;
+    margin: 10px;
+}
+
+ul {
+    font-size: 1.2em;
+    margin: 20px;
+    padding: 40px;
+}
