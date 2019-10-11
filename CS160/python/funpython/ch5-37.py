@@ -21,6 +21,7 @@ row = 0
 
 while row < height:
     
+    
     count = 0
     while count < row+1:
        print(end=' ')

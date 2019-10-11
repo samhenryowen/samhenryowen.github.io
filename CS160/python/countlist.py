@@ -5,7 +5,7 @@ def countto():
     x = int(input("Count to? "))
     
     if x <= 0:
-        print("Enter a number greater than 0")
+        print("Must enter a number greater than 0...")
         countto()
         
     else:
