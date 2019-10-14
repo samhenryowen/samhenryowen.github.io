@@ -1,0 +1,7 @@
+Runestone Chapter 3 Discussion Questions
+
+1. n^2
+2. n
+3. log(n)
+4. n^3
+5. 3n
