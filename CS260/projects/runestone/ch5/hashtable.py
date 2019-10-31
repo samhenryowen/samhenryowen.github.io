@@ -22,9 +22,12 @@ class HashTable:
                     nextslot = self.rehash(nextslot, len(self.slots))
 
                     if nextslot == firsttry:
-                        self.size = self.size + 1
-                        self.slots.append(None)
-                        self.data.append(None)
+                        newsize = int(self.size * 1.5)
+
+                        for i in range(newsize - self.size):
+                            self.slots.append(None)
+                            self.data.append(None)
+                        self.size = newsize
 
                 if self.slots[nextslot] == None:
                     self.slots[nextslot] = key
