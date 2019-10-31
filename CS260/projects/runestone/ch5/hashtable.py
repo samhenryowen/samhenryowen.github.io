@@ -39,7 +39,7 @@ class HashTable:
         return key % size
 
     def rehash(self, oldhash, size):
-        return (oldhash + 1) % size
+        return (oldhash + 3) % size
 
     def get(self, key):
         startslot = self.hashfunction(key, len(self.slots))
