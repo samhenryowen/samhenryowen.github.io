@@ -2,6 +2,7 @@ from pythonds.basic import Stack
 
 def infixEval(infixexpr):
     prec = {}
+    prec["^"] = 4
     prec["*"] = 3
     prec["/"] = 3
     prec["+"] = 2
@@ -42,7 +43,7 @@ def infixEval(infixexpr):
     postfixExpr = " ".join(postfixList)
     
     solution = postfixEval(postfixExpr)
-    return postfixExpr, solution
+    return postfixExpr
 
 def postfixEval(postfixExpr):
     operandStack = Stack()
@@ -67,10 +68,10 @@ def doMath(op, op1, op2):
         return op1 // op2
     elif op == "+":
         return op1 + op2
-    elif op =="**":
+    elif op =="^":
         return op1 ** op2
     else:
         return op1 - op2
         
 
-print(infixEval("(1 + 1) * 2"))
+print(infixEval("(1 * (4 - 2) ^ 2 + 6)"))
