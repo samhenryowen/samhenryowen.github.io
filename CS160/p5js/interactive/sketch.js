@@ -1,11 +1,42 @@
 function setup() {
-
-createCanvas(600,480)
+alert("Hello,\nChange colors with b,r,g,B,w\nChange brush size with up and down arrows\nChange shapes with left and right arrows\n\nIf you forget press 'h' for a console message with these commands.")
+var boxlength = prompt("Enter drawing box length in px:")
+var boxwidth = prompt("Enter drawing box width in px:")
+createCanvas(600,600)
 ellipseMode(CENTER);
+createDrawing();
+brushSize = 10;
+fillColor = 0;
+shapeValue = ellipse
 }
 
 function draw() {
+	shapeValue(mouseX,mouseY,brushSize,brushSize);
 
+	if(mouseIsPressed) { fill(fillColor); }
+	else { fill(255,255,255,0) }
+
+	if(keyIsPressed) {
+		if (keyCode == UP_ARROW) { brushSize = brushSize + 2; }
+		if (keyCode == DOWN_ARROW) { brushSize = brushSize - 2; }
+
+		if (key == 'b') { fillColor = "#0000FF"; }
+		if (key == 'r') { fillColor = "#FF0000"; }
+		if (key == 'g') { fillColor = "#00FF00"; }
+		if (key == 'B') { fillColor = "#000000"; }
+		if (key == 'w') { fillColor = "#FFFFFF"; }
+
+		if (keyCode == LEFT_ARROW) { shapeValue = rect; }
+		if (keyCode == RIGHT_ARROW) { shapeValue = ellipse; }
+
+		if (key == 'h') {
+			print("Change colors with b,r,g,B,w\nChange brush size with up and down arrows\nChange shapes with left and right arrows");
+		}
+
+	}
+}
+
+function createDrawing() {
 	background(204);
 	fill(255,100,50,255);
 	strokeWeight(1);
@@ -29,5 +60,4 @@ function draw() {
 	line(0,0,599,479);
 	line(0,240,599,479);
 	line(240,0,599,479);
-
 }
