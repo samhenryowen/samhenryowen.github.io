@@ -2,7 +2,7 @@ function setup() {
 alert("Hello,\nChange colors with b,r,g,B,w\nChange brush size with up and down arrows\nChange shapes with left and right arrows\n\nIf you forget press 'h' for a console message with these commands.")
 var boxlength = prompt("Enter drawing box length in px:")
 var boxwidth = prompt("Enter drawing box width in px:")
-createCanvas(600,600)
+createCanvas(boxlength,boxwidth)
 ellipseMode(CENTER);
 createDrawing();
 brushSize = 10;
@@ -14,7 +14,10 @@ function draw() {
 	shapeValue(mouseX,mouseY,brushSize,brushSize);
 
 	if(mouseIsPressed) { fill(fillColor); }
-	else { fill(255,255,255,0) }
+	else { 
+		stroke(255,255,255,0);
+		fill(255,255,255,0);
+	}
 
 	if(keyIsPressed) {
 		if (keyCode == UP_ARROW) { brushSize = brushSize + 2; }
